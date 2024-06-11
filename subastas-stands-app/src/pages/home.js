@@ -1,7 +1,36 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
+import { useNavigate } from "react-router-dom";
+
+const valid_codes = [
+  "123abc"
+]
+
+const initialValues = {
+  accessCode: '',
+}
 
 function Home() {
-    
+  
+  const [formValues, setFormValues] = useState(initialValues);
+  const [denied_access, setDeniedAccess] = useState(false);
+
+  const navigate = useNavigate();
+  
+    const handleChange = (e) =>{
+        const { name, value } = e.target;
+        setFormValues({...formValues, [name]: value});
+    }
+  
+    const handleSubmit = (e) => {
+      e.preventDefault();
+      console.log(formValues)
+      if (valid_codes.find(code => code === formValues.accessCode)) {
+          navigate(`/mision/${formValues.accessCode}`)
+      } else {
+        setDeniedAccess(true);
+      }
+    };
+
     return (
         <div className="bg-black">
           <div className="mx-auto max-w-7xl py-24 sm:px-6 sm:py-32 lg:px-8">
@@ -11,23 +40,33 @@ function Home() {
               </h2>
               <div className="mt-10 flex items-center justify-center gap-x-6">
               <div className="mt-6 flex max-w-md gap-x-4">
-                  <label htmlFor="access-code" className="sr-only">
+                  <label htmlFor="accessCode" className="sr-only">
                     Access code
                   </label>
+                  {
+                    denied_access? 
+                    <label className="text-principal/90 font-medium text-base">
+                      Access code invalid
+                    </label>
+                    : null
+                  }
                   <input
-                    id="access-code"
-                    name="access-code"
+                    id="accessCode"
+                    name="accessCode"
                     type="password"
+                    onChange={handleChange}
                     required
                     className="min-w-0 flex-auto rounded-md border-0 bg-white/5 px-3.5 py-2 text-white shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:text-sm sm:leading-6"
                     placeholder="Access Code"
-                  />
+                    />
                   <button
+                    onClick={handleSubmit}
                     type="submit"
                     className="flex-none rounded-md bg-black px-3.5 py-2.5 text-sm font-semibold text-principal/95 shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
-                  >
+                    >
                     Ingresar
                   </button>
+
                 </div>
               </div>
             </div>

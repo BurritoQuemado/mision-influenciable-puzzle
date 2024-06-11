@@ -5,6 +5,7 @@ import {
   AgentePage,
   Home,
   LoginPage,
+  MisionPage,
 } from './pages'
 import { Layout } from './components';
 function App () {
@@ -42,6 +43,7 @@ function App () {
         <Route path="/agentes" element={ <Agentes /> } />
         <Route path='/login' element={ <LoginPage setLoggedIn={setLoggedIn} /> } />
         <Route path='/agente/:username' element={ <AgentePage /> } />
+        <Route path='/mision/:access_code' element={ <MisionPage /> } />
       </Routes>
     </Layout>
   );
