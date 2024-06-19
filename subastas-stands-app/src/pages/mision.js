@@ -9,7 +9,7 @@ import Robot from "../assets/images/robot-solo.webp"
 const misiones = [
    {
     access_code: "123abc",
-    agent: "riversgg",
+    agent: "generic",
     youtube_id: "bf-B1QORoMM",
     images: [
         {
@@ -25,12 +25,7 @@ const misiones = [
             src: Pista3Img
         },
         ],
-    riddle: `Soy algo que se te da todos los días, pero nunca lo posees.
-
-            Se pierde en la noche y regresa con la luz.
-
-            Todos lo necesitan, pero nadie lo puede comprar.`,
-    answer: "respuesta"
+    answer: "125000"
     },
 ]
 
