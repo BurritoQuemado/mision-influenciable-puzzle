@@ -4,7 +4,7 @@ import PistasBtn from "../assets/images/boton-pistas.webp"
 import Pista1Img from "../assets/images/pistas/pista1.webp"
 import Pista2Img from "../assets/images/pistas/pista2.webp"
 import Pista3Img from "../assets/images/pistas/pista3.webp"
-import Robot from "../assets/images/robot-solo.webp"
+import Robot from "../assets/images/robot2.gif"
 
 const misiones = [
    {
