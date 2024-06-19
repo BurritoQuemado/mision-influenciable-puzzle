@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from "react";
 import { useNavigate } from "react-router-dom";
+import MisionVideo from "../assets/video/mision.mp4"
 
 const valid_codes = [
   "123abc"
@@ -32,14 +33,24 @@ function Home() {
     };
 
     return (
-        <div className="bg-black">
-          <div className="mx-auto max-w-7xl py-24 sm:px-6 sm:py-32 lg:px-8">
-            <div className="relative isolate overflow-hidden bg-gray-900 px-6 py-24 text-center shadow-2xl sm:rounded-3xl sm:px-16">
+        <div className="bg-transparent px-4 rounded-xl">
+          <div className="mx-auto max-w-7xl pt-12 lg:py-24 sm:px-6 lg:px-8">
+            <div className="relative isolate overflow-hidden bg-gray-900 px-6 py-10  lg:py-24 text-center shadow-2xl sm:rounded-3xl sm:px-16">
               <h2 className="mx-auto max-w-2xl text-3xl font-bold tracking-tight text-principal sm:text-4xl">
-                Bienvenido Agente
+                Te damos la bienvenida, para iniciar ingresa el código único que te fue proporcionado:
               </h2>
+              <div className="pt-10 w-full h-[480px]">
+                    <iframe
+                        className="w-full h-full aspect-video"
+                        src={MisionVideo}
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        title="Youtube video"
+                        allowFullScreen
+                    ></iframe>
+                </div>
               <div className="mt-10 flex items-center justify-center gap-x-6">
-              <div className="mt-6 flex max-w-md gap-x-4">
+              <div className="mt-6 flex flex-col gap-4 lg:flex-row max-w-md gap-x-4">
                   <label htmlFor="accessCode" className="sr-only">
                     Access code
                   </label>

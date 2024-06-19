@@ -1,5 +1,9 @@
 import React, {useState, useEffect} from "react";
 import { useParams } from "react-router-dom";
+import PistasBtn from "../assets/images/boton-pistas.webp"
+import Pista1Img from "../assets/images/pistas/pista1.webp"
+import Pista2Img from "../assets/images/pistas/pista2.webp"
+import Pista3Img from "../assets/images/pistas/pista3.webp"
 
 const misiones = [
    {
@@ -8,20 +12,16 @@ const misiones = [
     youtube_id: "bf-B1QORoMM",
     images: [
         {
-            name:  "riversvsrivers",
-            src: "https://imgs.search.brave.com/6AVrbAH-9a3hYUc0EVhSAwfWDjliFINDf3Z0VVxOrqg/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pLmJs/b2dzLmVzLzY1ODE5/ZC92ZWxhZGEtMy0w/Mi80NTBfMTAwMC53/ZWJw"
+            name:  "Pista 1",
+            src: Pista1Img
         },
         {
-            name:  "riversvsrivers",
-            src: "https://imgs.search.brave.com/6AVrbAH-9a3hYUc0EVhSAwfWDjliFINDf3Z0VVxOrqg/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pLmJs/b2dzLmVzLzY1ODE5/ZC92ZWxhZGEtMy0w/Mi80NTBfMTAwMC53/ZWJw"
+            name:  "Pista 2",
+            src: Pista2Img
         },
         {
-            name:  "riversvsrivers",
-            src: "https://imgs.search.brave.com/6AVrbAH-9a3hYUc0EVhSAwfWDjliFINDf3Z0VVxOrqg/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pLmJs/b2dzLmVzLzY1ODE5/ZC92ZWxhZGEtMy0w/Mi80NTBfMTAwMC53/ZWJw"
-        },
-        {
-            name:  "riversvsrivers",
-            src: "https://imgs.search.brave.com/6AVrbAH-9a3hYUc0EVhSAwfWDjliFINDf3Z0VVxOrqg/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pLmJs/b2dzLmVzLzY1ODE5/ZC92ZWxhZGEtMy0w/Mi80NTBfMTAwMC53/ZWJw"
+            name:  "Pista 3",
+            src: Pista3Img
         },
         ],
     riddle: `Soy algo que se te da todos los días, pero nunca lo posees.
@@ -37,14 +37,10 @@ const initialValues = {
     answer: '',
   }
 
-const MAX_TRIES = 3;
-
-
 function Mision() {
     const { access_code } = useParams();
     const [playing, setPlaying] = useState(false);
     const [playingTime, setPlayingTime] = useState(0);
-    const [intentos, setIntentos] = useState(3);
     const [formValues, setFormValues] = useState(initialValues);
     const [showError, setShowError] = useState(false);
     const [won, setWon] = useState(false);
@@ -62,11 +58,7 @@ function Mision() {
             setPlaying(false);
             setWon(true);
         } else {
-            setIntentos((intentos) => intentos - 1)
             setShowError(true);
-            if (intentos === 0) {
-                setPlaying(false);
-            }
         }
     };
 
@@ -88,60 +80,63 @@ function Mision() {
         return  `${hours.toString().padStart(2, '0')}hr ${minutes.toString().padStart(2, "0")} min ${seconds.toString().padStart(2, "0")}s`
     }
     return (
-        <div className="bg-black py-24 sm:py-32">
+        <div className="bg-black my-10 sm:py-32 rounded-3xl">
             <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="mx-auto max-w-2xl lg:text-center">
                 <p className="mt-2 text-3xl font-bold tracking-tight text-principal sm:text-4xl">
-                    Preparate para la misión
+                    Bienvenido al primer reto eliminatorio de Misión Influencible
                 </p>
-                <p className="mt-6 text-lg leading-8 text-principal/95">
-                    Una vez que inicies la misión tendrás que resolverla lo más rápido posible para no quedarte atrás.
+                <p className="mt-6 text-sm lg:text-lg text-left leading-8 text-principal/95">
+                Estás a punto de embarcarte en una misión desafiante que pondrá a prueba tu ingenio y habilidades de convocatoria. Al hacer click en el botón de inicio se develarán tres pistas que te llevarán a descubrir una cifra crucial para avanzar en la competencia. Antes de comenzar, por favor, revisa las siguientes instrucciones cuidadosamente.
                 </p>
-                <p className="mt-2 text-lg leading-8 text-principal/95">
-                    Recuerda que solo tienes 3 intentos para resolver la misión.
+                <p className="mt-2 text-sm lg:text-lg  text-left leading-8 text-principal/95">
+                    Instrucciones:
+                </p>
+                <p className="mt-2 text-sm lg:text-lg  text-left leading-8 text-principal/95">
+                Revisión de Pistas: <br />
+                Al hacer clic en el botón "Develar Pistas", recibirás tres pistas. La primera será una imagen que muestra una sección de un lugar en México, y la 
+                segunda será un elemento adicional que refleja el uso o un aspecto histórico del lugar, la tercera te ayudará a redondear la información.<br />
+                Resolución de Pistas:<br />
+                Usa tus habilidades de observación y deducción para interpretar las pistas. Te recomendamos pedir ayuda a tus seguidores publicando las pistas en tus redes sociales.<br />
+                Interacción con Seguidores:<br />
+                Comparte las pistas con tus seguidores y solicita su ayuda para identificar el lugar. La colaboración es clave para encontrar la respuesta correcta rápidamente.<br />
+                Ingreso de cifra:<br />
+                Una vez que creas tener la respuesta, introduce la cifra exacta en el campo “Detener cronómetro”. Esto no tiene un limite de intentos.<br />
+                Detener el Reloj:<br />
+                El reloj comenzará a correr tan pronto hagas clic en "Develar Pistas" y se detendrá automáticamente cuando ingreses las coordenadas correctas.<br />
+                Confidencialidad del Tiempo:<br />
+                Solo conocerás el tiempo que has registrado, no la posición en el ranking general. Cada participante tiene su propio reloj, que se activa individualmente al iniciar.<br />
+                Avance en la Competencia:<br />
+                El mayor tiempo en completar la misión será eliminado.<br />
+                Recuerda:<br />
+                La precisión y rapidez son esenciales.<br />
+                La colaboración con tus seguidores puede ser la clave para tu éxito.<br />
+                ¡Buena suerte y que comience la misión!
                 </p>
                 
             </div>
             {
-                playing && intentos > 0 ? 
+                playing ? 
                 <div className="flex flex-col justify-center items-center">
                 <div className="w-full flex flex-row justify-evenly">
-                    <p className="mt-2 text-xl font-bold text-principal/95 sm:text-4xl">
-                       {formatPlayingTime(playingTime)}
-                    </p>
-                    <p className="mt-2 text-2xl font-bold text-principal/95 sm:text-4xl">
-                        Intentos: {intentos}/{MAX_TRIES}
+                    <p className="mt-20 text-xl font-bold text-principal/95 sm:text-4xl">
+                        {formatPlayingTime(playingTime)}
                     </p>
                 </div>
-                <div className="pt-6 w-full h-[480px]">
-                    <iframe
-                        className="w-full h-full aspect-video"
-                        src={`https://www.youtube.com/embed/${mision.youtube_id}`}
-                        frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        title="Youtube video"
-                        allowFullScreen
-                    ></iframe>
-                </div>
-                <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
+                <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:gap-x-8">
                     {mision.images.map((image) => (
                         <div key={image.name} className="group relative">
-                        <div className="aspect-[1/1] w-full object-contain overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
+                        <div className="aspect-[1/1] w-full object-contain overflow-hidden bg-gray-200 lg:aspect-none lg:h-94">
                             <img
                             src={image.src}
                             alt={image.name}
-                            className="h-full w-full object-cover object-center lg:h-full lg:w-full"
+                            className="h-full w-full object-fit object-center lg:h-full lg:w-full"
                             />
                         </div>
                         </div>
                     ))}
                     </div>
-                <div className="py-4 px-4">
-                    <p className="text-principal/95">
-                        {mision.riddle}
-                    </p>
-                </div>
-                <div className="mt-6">
+                <div className="mt-6 flex flex-col gap-4 lg:flex-row justify-center items-center">
                     <input
                         id="answer"
                         name="answer"
@@ -153,7 +148,7 @@ function Mision() {
                         />
                         {
                             showError ? 
-                                <label className="text-principal/90 font-medium text-base">
+                                <label className="text-red-500 font-medium text-base">
                                     Error
                                     </label>
                                 : null
@@ -161,21 +156,21 @@ function Mision() {
                     <button
                         onClick={handleSubmit}
                         type="submit"
-                        className="flex-non ml-4 rounded-md bg-gray-900 px-3.5 py-2.5 text-sm font-semibold text-principal/95 shadow-sm hover:bg-gray-700/50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-bg-gray-700/50"
+                        className="flex-non rounded-md bg-gray-900 px-3.5 py-2.5 text-sm font-semibold text-principal/95 shadow-sm hover:bg-gray-700/50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-bg-gray-700/50"
                         >
-                        Enviar
+                        Enviar respuesta
                     </button>
                 </div>
             </div> 
 
                 :
-                    intentos > 0 && playingTime === 0?
-                        <div className="flex flex-col">
+                    playingTime === 0?
+                        <div className="flex items-center justify-center">
                             <button
                                 onClick={() => setPlaying(true)}
-                                className="flex-non mt-4 ml-4 rounded-md bg-gray-900 px-3.5 py-2.5 text-sm font-semibold text-principal/95 shadow-sm hover:bg-gray-700/50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-bg-gray-700/50"
+                                className="flex-non mt-4 ml-4 rounded-md bg-transparent px-3.5 py-2.5 text-sm font-semibold text-principal/95 shadow-sm hover:bg-gray-700/50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-bg-gray-700/50"
                                 >
-                                Comenzar Misión
+                                <img src={PistasBtn} alt="Develar pistas" className="h-32 w-auto" />
                             </button>
                         </div>
                     : null
@@ -184,16 +179,7 @@ function Mision() {
                 won && !playing ? 
                     <div className="mx-auto max-w-2xl lg:text-center">
                         <p className="mt-2 text-3xl font-bold tracking-tight text-principal sm:text-4xl">
-                            Bien hecho agente lo conseguiste en {formatPlayingTime(playingTime)}, regresa mañana para la siguiente misión
-                        </p>            
-                    </div> 
-                : null
-            }
-            {
-                !won && !playing && intentos === 0 ? 
-                    <div className="mx-auto max-w-2xl lg:text-center">
-                        <p className="mt-2 text-3xl font-bold tracking-tight text-principal sm:text-4xl">
-                            Mejor suerte para la proxima agente
+                            Bien hecho agente lo conseguiste en {formatPlayingTime(playingTime)}, espera nuevas instrucciones
                         </p>            
                     </div> 
                 : null

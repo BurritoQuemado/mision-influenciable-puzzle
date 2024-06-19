@@ -2,7 +2,6 @@ import React, { Component, Fragment } from 'react'
 import { Link } from 'react-router-dom'
 import { Popover, Transition } from '@headlessui/react'
 import Logo from '../../assets/images/logo.webp'
-import Logo2 from '../../assets/images/logo2.webp'
 import {
   Bars3Icon,
   XMarkIcon,
@@ -35,7 +34,7 @@ class Layout extends Component{
     const {logged_in, children, logout} = this.props;
     const logged = logged_in;
     return (
-      <div className="bg-black">
+      <div className="bg-main bg-cover bg-no-repeat">
         <div className="relative overflow-hidden">
           <Popover as="header" className="relative">
             <div className="bg-black pt-4 pb-0">
@@ -157,8 +156,8 @@ class Layout extends Component{
                 <div className="py-4 sm:mx-auto sm:w-full sm:max-w-md">
                     <img
                         className="mx-auto h-32 w-auto"
-                        src={ Logo2 }
-                        alt="logo_viajespalacio"
+                        src={ Logo }
+                        alt="mision influencible"
                     />
                 </div>
                 <div className="mt-0 grid grid-cols-1 gap-8 xl:col-span-2 xl:mt-0">
