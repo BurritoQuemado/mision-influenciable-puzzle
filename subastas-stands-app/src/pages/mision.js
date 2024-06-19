@@ -76,10 +76,10 @@ function Mision() {
         return  `${hours.toString().padStart(2, '0')}hr ${minutes.toString().padStart(2, "0")} min ${seconds.toString().padStart(2, "0")}s`
     }
     return (
-        <div className="bg-black my-10 sm:py-32 rounded-3xl">
+        <div className="bg-black my-10 py-12 md:py-2 rounded-3xl">
             <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="mx-auto max-w-2xl lg:text-center">
-                <div className="flex items-center justify-center py-8">
+                <div className="flex items-center justify-center py-2">
                     <img src={Robot} alt="Robot" className="w-auto h-56 lg:h-80" />
                 </div>
                 <p className="mt-2 text-3xl font-bold tracking-tight text-principal sm:text-4xl">
