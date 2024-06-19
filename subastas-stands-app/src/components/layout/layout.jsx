@@ -153,8 +153,8 @@ class Layout extends Component{
               Footer
             </h2>
             <div className="mx-auto max-w-md px-4 sm:max-w-7xl sm:px-6 lg:px-8 lg:pt-10">
-              <div className="xl:flex xl:flex-row items-center justify-evenly">
-                <div className="py-4 flex flex-col  md:flex-row items-center justify-evenly gap-4 sm:mx-auto sm:w-full sm:max-w-md">
+            <div className="flex flex-col lg:flex-row items-center justify-evenly">
+                <div className="py-4 flex flex-col  md:flex-row items-center justify-between gap-10 lg:gap-32">
                     <img
                         className="mx-auto h-32 w-auto"
                         src={ Logo }
