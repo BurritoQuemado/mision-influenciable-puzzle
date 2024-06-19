@@ -4,6 +4,7 @@ import PistasBtn from "../assets/images/boton-pistas.webp"
 import Pista1Img from "../assets/images/pistas/pista1.webp"
 import Pista2Img from "../assets/images/pistas/pista2.webp"
 import Pista3Img from "../assets/images/pistas/pista3.webp"
+import Robot from "../assets/images/robot-solo.webp"
 
 const misiones = [
    {
@@ -83,6 +84,9 @@ function Mision() {
         <div className="bg-black my-10 sm:py-32 rounded-3xl">
             <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="mx-auto max-w-2xl lg:text-center">
+                <div className="flex items-center justify-center py-8">
+                    <img src={Robot} alt="Robot" className="w-auto h-56 lg:h-80" />
+                </div>
                 <p className="mt-2 text-3xl font-bold tracking-tight text-principal sm:text-4xl">
                     Bienvenido al primer reto eliminatorio de Misión Influencible
                 </p>
