@@ -85,13 +85,13 @@ function Mision() {
                 <p className="mt-2 text-3xl font-bold tracking-tight text-principal sm:text-4xl">
                     Bienvenido al primer reto eliminatorio de Misión Influencible
                 </p>
-                <p className="mt-6 text-sm lg:text-lg text-left leading-8 text-principal/95">
+                <p className="mt-6 text-sm lg:text-lg text-left leading-8 text-white">
                 Estás a punto de embarcarte en una misión desafiante que pondrá a prueba tu ingenio y habilidades de convocatoria. Al hacer click en el botón de inicio se develarán tres pistas que te llevarán a descubrir una cifra crucial para avanzar en la competencia. Antes de comenzar, por favor, revisa las siguientes instrucciones cuidadosamente.
                 </p>
-                <p className="mt-2 text-sm lg:text-lg  text-left leading-8 text-principal/95">
+                <p className="mt-2 text-sm lg:text-lg  text-left leading-8 text-white">
                     Instrucciones:
                 </p>
-                <p className="mt-2 text-sm lg:text-lg  text-left leading-8 text-principal/95">
+                <p className="mt-2 text-sm lg:text-lg  text-left leading-8 text-white">
                 Revisión de Pistas: <br />
                 Al hacer clic en el botón "Develar Pistas", recibirás tres pistas. La primera será una imagen que muestra una sección de un lugar en México, y la 
                 segunda será un elemento adicional que refleja el uso o un aspecto histórico del lugar, la tercera te ayudará a redondear la información.<br />
